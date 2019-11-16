@@ -7,17 +7,16 @@ import { SwiftComponent } from './swift/swift.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { Routes, RouterModule } from '@angular/router';
 import { PageNotFoundComponentComponent } from './page-not-found-component/page-not-found-component.component';
 
-//const routes: Routes = [
-  //{ path: '', redirectTo: 'login', pathMatch: 'full'},
-  //{ path: 'login', component: LoginFormComponent },
-  //{ path: 'register', component: RegistrationFormComponent },
-  //{ path: 'todo', component: TodoAppComponent, canActivate: [AuthGuard] },
-  //{ path: 'logout', component: LogoutComponent },
-  //{ path: 'detail/:id', component: TodoDetailComponent, canActivate: [AuthGuard] },
-  //{ path: '**', component: PageNotFoundComponent }
-//]
+const routes: Routes = [
+  { path: '', redirectTo: 'login', pathMatch: 'full'},
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'swift', redirectTo: 'login' },
+  { path: '**', component: PageNotFoundComponentComponent }
+]
 
 @NgModule({
   declarations: [
@@ -30,7 +29,8 @@ import { PageNotFoundComponentComponent } from './page-not-found-component/page-
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
