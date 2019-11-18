@@ -9,11 +9,15 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { Routes, RouterModule } from '@angular/router';
 import { PageNotFoundComponentComponent } from './page-not-found-component/page-not-found-component.component';
+import { SelectionComponent } from './selection/selection.component';
+import { ScheduleComponent } from './schedule/schedule.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full'},
+  { path: '', redirectTo: 'selection', pathMatch: 'full'},
+  { path: 'selection', component: SelectionComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'schedule', component: ScheduleComponent },
   { path: 'swift', redirectTo: 'login' },
   { path: '**', component: PageNotFoundComponentComponent }
 ]
@@ -25,7 +29,9 @@ const routes: Routes = [
     FooterComponent,
     LoginComponent,
     RegisterComponent,
-    PageNotFoundComponentComponent
+    PageNotFoundComponentComponent,
+    SelectionComponent,
+    ScheduleComponent
   ],
   imports: [
     BrowserModule,
